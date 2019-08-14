@@ -4,22 +4,25 @@ public class Book {
     private String title;
     private String author;
     private String yearPublished;
+    private Boolean isBorrowed;
 
-    public Book(String title, String author, String yearPublished) {
+    public Book(String title, String author, String yearPublished, Boolean isBorrowed) {
         this.title = title;
         this.author = author;
         this.yearPublished = yearPublished;
+        this.isBorrowed = isBorrowed;
     }
 
-    public String getTitle() {
-        return title;
+    public String getInfo() {
+        String info = "Title: " + title + " | Author: " + author + " | Year Published: " + yearPublished;
+        return info;
     }
 
-    public String getAuthor() {
-        return author;
+    public Boolean getIsBorrowed() {
+        return isBorrowed;
     }
 
-    public String getYearPublished() {
-        return yearPublished;
+    public void setBorrowed(Boolean borrowed) {
+        isBorrowed = borrowed;
     }
 }

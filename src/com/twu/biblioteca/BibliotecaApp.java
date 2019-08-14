@@ -6,7 +6,6 @@ public class BibliotecaApp {
 
         Menu menu = new Menu();
         menu.startMenu();
-        menu.readAnswer();
     }
 
     private static String welcomeMessage() {

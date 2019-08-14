@@ -11,21 +11,16 @@ public class BookTest {
 
     @Before
     public void setUp() throws Exception {
-        this.book = new Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", "1997");
+        this.book = new Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", "1997", true);
     }
 
     @Test
-    public void shouldReturnTitle() {
-        assertThat(this.book.getTitle(), is("Harry Potter and the Sorcerer's Stone"));
+    public void shouldReturnBookInfo() {
+        assertThat(this.book.getInfo(), is("Title: Harry Potter and the Sorcerer's Stone | Author: J. K. Rowling | Year Published: 1997"));
     }
 
     @Test
-    public void shouldReturnAuthor() {
-        assertThat(this.book.getAuthor(), is("J. K. Rowling"));
-    }
-
-    @Test
-    public void shouldReturnYearPublished() {
-        assertThat(this.book.getYearPublished(), is("1997"));
+    public void shouldReturnIsBorrowed() {
+        assertThat(this.book.getIsBorrowed(), is(true));
     }
 }
