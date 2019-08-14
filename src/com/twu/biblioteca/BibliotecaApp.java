@@ -16,7 +16,7 @@ public class BibliotecaApp {
                 new Book("Harry Potter and the Deathly Hallows", "J. K. Rowling", "2007")};
 
         for (int i = 0; i < books.length - 1; i++) {
-            System.out.println(books[i].title + ", " + books[i].author + ", " + books[i].yearPublished);
+            System.out.println(books[i].getTitle() + ", " + books[i].getAuthor() + ", " + books[i].getYearPublished());
         }
     }
 }
