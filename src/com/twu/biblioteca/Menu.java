@@ -27,10 +27,17 @@ public class Menu {
                 case 0:
                     System.exit(0);
                 case 1:
-                    borrow.getAvailable();
-                    System.out.println("\nWhich book do you want to borrow?");
-                    borrow.checkout(Integer.parseInt(scanner.nextLine()));
-                    break;
+                    int id;
+
+                    while (true) {
+                        borrow.getListOfBooks();
+                        System.out.println("\nWhich book do you want to borrow?");
+                        id = Integer.parseInt(scanner.nextLine());
+
+                        if (borrow.checkout(id)) {
+                            break;
+                        }
+                    }
                 default:
                     System.out.println(invalidOption());
                     break;

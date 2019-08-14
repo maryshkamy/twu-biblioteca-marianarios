@@ -14,8 +14,7 @@ public class Book {
     }
 
     public String getInfo() {
-        String info = "Title: " + title + " | Author: " + author + " | Year Published: " + yearPublished;
-        return info;
+        return "Title: " + title + " | Author: " + author + " | Year Published: " + yearPublished;
     }
 
     public Boolean getIsBorrowed() {

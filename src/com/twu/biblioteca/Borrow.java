@@ -9,7 +9,7 @@ public class Borrow {
         this.libraryDatabase = new LibraryDatabase();
     }
 
-    public void getAvailable() {
+    public void getListOfBooks() {
         System.out.println("\nList of Books:");
 
         for (int i = 0; i < libraryDatabase.getListOfBooks().length - 1; i++) {
@@ -19,9 +19,14 @@ public class Borrow {
         }
     }
 
-    public void checkout(int id) {
-        libraryDatabase.getListOfBooks()[id].setBorrowed(true);
-        System.out.println("Thank you! Enjoy the book");
-    }
+    public Boolean checkout(int id) {
+        if (!libraryDatabase.getListOfBooks()[id].getIsBorrowed()) {
+            libraryDatabase.getListOfBooks()[id].setBorrowed(true);
+            System.out.println("Thank you! Enjoy the book");
+            return true;
+        }
 
+        System.out.println("Sorry, that book is not available");
+        return false;
+    }
 }
