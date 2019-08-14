@@ -19,7 +19,7 @@ public class Menu {
     }
 
     public void startMenu() {
-        System.out.println("\nSelect one options:\n1 - List of Books");
+        System.out.println("\nSelect one options:\n0 - Quit\n1 - List of Books");
     }
 
     public void readAnswer() {
@@ -29,6 +29,8 @@ public class Menu {
             input = Integer.parseInt(scanner.nextLine());
 
             switch (input) {
+                case 0:
+                    System.exit(0);
                 case 1:
                     listOfBooks();
                     break;
