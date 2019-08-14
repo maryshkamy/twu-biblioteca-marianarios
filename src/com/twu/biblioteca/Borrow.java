@@ -21,5 +21,7 @@ public class Borrow {
 
     public void checkout(int id) {
         libraryDatabase.getListOfBooks()[id].setBorrowed(true);
+        System.out.println("Thank you! Enjoy the book");
     }
+
 }
