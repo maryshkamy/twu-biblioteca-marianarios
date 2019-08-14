@@ -8,7 +8,7 @@ public class Menu {
 
     public Menu() {
         this.scanner = new Scanner(System.in);
-        this.books = new Book[] {
+        this.books = new Book[]{
                 new Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", "1997"),
                 new Book("Harry Potter and the Chamber of Secrets", "J. K. Rowling", "1998"),
                 new Book("Harry Potter and the Prisoner of Azkaban", "J. K. Rowling", "1999"),
@@ -23,14 +23,24 @@ public class Menu {
     }
 
     public void readAnswer() {
-        int input = Integer.parseInt(scanner.nextLine());
+        int input;
 
-        switch (input) {
-            case 1:
-                listOfBooks();
-            default:
-                break;
+        while (true) {
+            input = Integer.parseInt(scanner.nextLine());
+
+            switch (input) {
+                case 1:
+                    listOfBooks();
+                    break;
+                default:
+                    System.out.println(invalidOption());
+                    break;
+            }
         }
+    }
+
+    private String invalidOption() {
+        return "Please select a valid option!";
     }
 
     private void listOfBooks() {
