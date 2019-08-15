@@ -23,4 +23,12 @@ public class BookTest {
     public void shouldReturnIsBorrowed() {
         assertThat(this.book.getIsBorrowed(), is(true));
     }
+
+    @Test
+    public void shouldSetIsBorrowed() {
+        boolean before = this.book.getIsBorrowed();
+        this.book.setIsBorrowed(false);
+
+        assertNotEquals(this.book.getIsBorrowed(), before);
+    }
 }

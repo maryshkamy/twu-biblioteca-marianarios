@@ -13,10 +13,10 @@ public class Menu {
 
     @Override
     public String toString() {
-        return "\nSelect one options:\n0 - Quit\n1 - List of Books\n3 - Return a Book";
+        return "\nSelect one options:\n0 - Quit\n1 - List of Books\n2 - Borrow a Book\n3 - Return a Book";
     }
 
-    void startMenu() {
+    void start() {
         int input;
         int id;
 
@@ -28,12 +28,15 @@ public class Menu {
                 case 0:
                     System.exit(0);
                 case 1:
+                    borrow.getAllBooks();
+                    break;
+                case 2:
                     do {
                         borrow.getAvailableBooks();
                         System.out.println("\nWhich book do you want to borrow?");
                         id = Integer.parseInt(scanner.nextLine());
 
-                    } while (!borrow.checkout(id));
+                    } while (!borrow.checkoutABook(id));
 
                     break;
                 case 3:
@@ -45,13 +48,9 @@ public class Menu {
 
                     break;
                 default:
-                    System.out.println(invalidOption());
+                    System.out.println("Please select a valid option!");
                     break;
             }
         }
-    }
-
-    private String invalidOption() {
-        return "Please select a valid option!";
     }
 }

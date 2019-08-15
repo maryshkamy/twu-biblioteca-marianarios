@@ -5,6 +5,6 @@ public class BibliotecaApp {
         System.out.println("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!");
 
         Menu menu = new Menu();
-        menu.startMenu();
+        menu.start();
     }
 }
