@@ -7,11 +7,21 @@ class Borrow {
         this.libraryDatabase = new LibraryDatabase();
     }
 
-    void getListOfBooks() {
-        System.out.println("\nList of Books:");
+    void getAvailableBooks() {
+        System.out.println("\nList of Books Available:");
 
         for (int i = 0; i < libraryDatabase.getListOfBooks().length - 1; i++) {
             if (!libraryDatabase.getListOfBooks()[i].getIsBorrowed()) {
+                System.out.println(i + " - " + libraryDatabase.getListOfBooks()[i].getInfo());
+            }
+        }
+    }
+
+    void getUnavailableBooks() {
+        System.out.println("\nList of Books To Return:");
+
+        for (int i = 0; i < libraryDatabase.getListOfBooks().length - 1; i++) {
+            if (libraryDatabase.getListOfBooks()[i].getIsBorrowed()) {
                 System.out.println(i + " - " + libraryDatabase.getListOfBooks()[i].getInfo());
             }
         }
@@ -25,6 +35,16 @@ class Borrow {
         }
 
         System.out.println("Sorry, that book is not available");
+        return false;
+    }
+
+    Boolean returnABook(int id) {
+        if (libraryDatabase.getListOfBooks()[id].getIsBorrowed()) {
+            libraryDatabase.getListOfBooks()[id].setIsBorrowed(false);
+
+            return true;
+        }
+
         return false;
     }
 }
