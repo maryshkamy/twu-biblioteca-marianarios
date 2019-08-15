@@ -13,7 +13,7 @@ public class Menu {
 
     @Override
     public String toString() {
-        return "\nSelect one options:\n0 - Quit\n1 - List of Books\n2 - Borrow a Book\n3 - Return a Book";
+        return "\nSelect one options:\n0 - Quit\n1 - List of Books\n2 - Borrow a Book\n3 - Return a Book\n4 - List of Movies";
     }
 
     void start() {
@@ -46,6 +46,9 @@ public class Menu {
                         id = Integer.parseInt(scanner.nextLine());
                     } while (!borrow.returnABook(id));
 
+                    break;
+                case 4:
+                    borrow.getAllMovies();
                     break;
                 default:
                     System.out.println("Please select a valid option!");
