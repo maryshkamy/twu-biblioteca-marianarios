@@ -30,21 +30,22 @@ class Borrow {
     Boolean checkout(int id) {
         if (!libraryDatabase.getListOfBooks()[id].getIsBorrowed()) {
             libraryDatabase.getListOfBooks()[id].setIsBorrowed(true);
-            System.out.println("Thank you! Enjoy the book");
+            System.out.println("Thank you! Enjoy the book!");
             return true;
         }
 
-        System.out.println("Sorry, that book is not available");
+        System.out.println("Sorry, that book is not available.");
         return false;
     }
 
     Boolean returnABook(int id) {
         if (libraryDatabase.getListOfBooks()[id].getIsBorrowed()) {
             libraryDatabase.getListOfBooks()[id].setIsBorrowed(false);
-            System.out.println("Thank you for returning the book");
+            System.out.println("Thank you for returning the book!");
             return true;
         }
 
+        System.out.println("That is not a valid book to return.");
         return false;
     }
 }
