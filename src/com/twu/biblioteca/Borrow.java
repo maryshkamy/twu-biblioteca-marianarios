@@ -51,12 +51,32 @@ class Borrow {
         }
     }
 
+    void getAvailableMovies() {
+        System.out.println("\nList of Movies Available:");
+
+        for (int i = 0; i < movies.length; i++) {
+            if (!movies[i].getIsBorrowed()) {
+                System.out.println(i + " - " + movies[i].getInfo());
+            }
+        }
+    }
+
     void getUnavailableBooks() {
         System.out.println("\nList of Books To Return:");
 
         for (int i = 0; i < books.length; i++) {
             if (books[i].getIsBorrowed()) {
                 System.out.println(i + " - " + books[i].getInfo());
+            }
+        }
+    }
+
+    void getUnavailableMovies() {
+        System.out.println("\nList of Movies To Return:");
+
+        for (int i = 0; i < movies.length; i++) {
+            if (movies[i].getIsBorrowed()) {
+                System.out.println(i + " - " + movies[i].getInfo());
             }
         }
     }
@@ -83,6 +103,32 @@ class Borrow {
         }
 
         System.out.println("That is not a valid book to return.");
+
+        return false;
+    }
+
+    Boolean checkoutAMovie(int id) {
+        if (!movies[id].getIsBorrowed()) {
+            movies[id].setIsBorrowed(true);
+            System.out.println("Thank you! Enjoy the movie!");
+
+            return true;
+        }
+
+        System.out.println("Sorry, that movie is not available.");
+
+        return false;
+    }
+
+    Boolean returnAMovie(int id) {
+        if (movies[id].getIsBorrowed()) {
+            movies[id].setIsBorrowed(false);
+            System.out.println("Thank you for returning the movie!");
+
+            return true;
+        }
+
+        System.out.println("That is not a valid movie to return.");
 
         return false;
     }

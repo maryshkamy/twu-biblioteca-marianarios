@@ -32,4 +32,24 @@ public class BorrowTest {
     public void shouldReturnABookUnsuccesful() {
         assertFalse(this.borrow.returnABook(0));
     }
+
+    @Test
+    public void shouldCheckoutAMovieSuccessful() {
+        assertTrue(this.borrow.checkoutAMovie(0));
+    }
+
+    @Test
+    public void shouldCheckoutAMovieUnsuccessful() {
+        assertFalse(this.borrow.checkoutAMovie(1));
+    }
+
+    @Test
+    public void shouldReturnAMovieSuccessful() {
+        assertTrue(this.borrow.returnAMovie(1));
+    }
+
+    @Test
+    public void shouldReturnAMovieUnsuccesful() {
+        assertFalse(this.borrow.returnAMovie(0));
+    }
 }

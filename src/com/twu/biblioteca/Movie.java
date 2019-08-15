@@ -18,4 +18,12 @@ class Movie {
     String getInfo() {
         return "Title: " + title + " | Director: " + author + " | Year: " + year + " | Rating: " + rating;
     }
+
+    Boolean getIsBorrowed() {
+        return isBorrowed;
+    }
+
+    void setIsBorrowed(boolean borrowed) {
+        isBorrowed = borrowed;
+    }
 }

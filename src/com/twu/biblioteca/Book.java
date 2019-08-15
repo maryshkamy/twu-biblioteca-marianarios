@@ -21,7 +21,7 @@ class Book {
         return isBorrowed;
     }
 
-    void setIsBorrowed(Boolean borrowed) {
+    void setIsBorrowed(boolean borrowed) {
         isBorrowed = borrowed;
     }
 }

@@ -16,6 +16,19 @@ public class MovieTest {
 
     @Test
     public void shouldReturnMovieInfo() {
-        assertThat(this.movie.getInfo(), is("Title: The Lord of the Rings: The Fellowship of the Ring | Director: J. K. Rowling | Year: 1997 | Rating: 8.8"));
+        assertThat(this.movie.getInfo(), is("Title: The Lord of the Rings: The Fellowship of the Ring | Director: 2001 | Year: Peter Jackson | Rating: 8.8"));
+    }
+
+    @Test
+    public void shouldReturnIsBorrowed() {
+        assertThat(this.movie.getIsBorrowed(), is(true));
+    }
+
+    @Test
+    public void shouldSetIsBorrowed() {
+        boolean before = this.movie.getIsBorrowed();
+        this.movie.setIsBorrowed(false);
+
+        assertNotEquals(this.movie.getIsBorrowed(), before);
     }
 }
