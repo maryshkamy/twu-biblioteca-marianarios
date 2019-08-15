@@ -41,7 +41,7 @@ class Borrow {
     Boolean returnABook(int id) {
         if (libraryDatabase.getListOfBooks()[id].getIsBorrowed()) {
             libraryDatabase.getListOfBooks()[id].setIsBorrowed(false);
-
+            System.out.println("Thank you for returning the book");
             return true;
         }
 
