@@ -2,13 +2,9 @@ package com.twu.biblioteca;
 
 public class BibliotecaApp {
     public static void main(String[] args) {
-        System.out.println(welcomeMessage());
+        System.out.println("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!");
 
         Menu menu = new Menu();
         menu.startMenu();
-    }
-
-    private static String welcomeMessage() {
-        return "Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!";
     }
 }
