@@ -1,9 +1,9 @@
 package com.twu.biblioteca;
 
-public class LibraryDatabase {
+class LibraryDatabase {
     private Book[] books;
 
-    public LibraryDatabase() {
+    LibraryDatabase() {
         this.books = new Book[]{
                 new Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", "1997", false),
                 new Book("Harry Potter and the Chamber of Secrets", "J. K. Rowling", "1998", true),
@@ -14,7 +14,7 @@ public class LibraryDatabase {
                 new Book("Harry Potter and the Deathly Hallows", "J. K. Rowling", "2007", true)};
     }
 
-    public Book[] getListOfBooks() {
+    Book[] getListOfBooks() {
         return  this.books;
     }
 }

@@ -1,27 +1,27 @@
 package com.twu.biblioteca;
 
-public class Book {
+class Book {
     private String title;
     private String author;
     private String yearPublished;
     private Boolean isBorrowed;
 
-    public Book(String title, String author, String yearPublished, Boolean isBorrowed) {
+    Book(String title, String author, String yearPublished, Boolean isBorrowed) {
         this.title = title;
         this.author = author;
         this.yearPublished = yearPublished;
         this.isBorrowed = isBorrowed;
     }
 
-    public String getInfo() {
+    String getInfo() {
         return "Title: " + title + " | Author: " + author + " | Year Published: " + yearPublished;
     }
 
-    public Boolean getIsBorrowed() {
+    Boolean getIsBorrowed() {
         return isBorrowed;
     }
 
-    public void setBorrowed(Boolean borrowed) {
+    void setIsBorrowed(Boolean borrowed) {
         isBorrowed = borrowed;
     }
 }

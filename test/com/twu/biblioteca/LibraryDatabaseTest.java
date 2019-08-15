@@ -15,8 +15,7 @@ public class LibraryDatabaseTest {
     }
 
     @Test
-    public void checkBookIsBorrowed() {
-        assertThat(this.libraryDatabase.getListOfBooks()[0].getIsBorrowed(), is(false));
-        assertThat(this.libraryDatabase.getListOfBooks()[1].getIsBorrowed(), is(true));
+    public void shouldReturnListOfBooks() {
+        assertThat(libraryDatabase.getListOfBooks(), is(libraryDatabase.getListOfBooks()));
     }
 }

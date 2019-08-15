@@ -1,15 +1,13 @@
 package com.twu.biblioteca;
 
-import java.util.Scanner;
-
-public class Borrow {
+class Borrow {
     private LibraryDatabase libraryDatabase;
 
-    public Borrow() {
+    Borrow() {
         this.libraryDatabase = new LibraryDatabase();
     }
 
-    public void getListOfBooks() {
+    void getListOfBooks() {
         System.out.println("\nList of Books:");
 
         for (int i = 0; i < libraryDatabase.getListOfBooks().length - 1; i++) {
@@ -19,9 +17,9 @@ public class Borrow {
         }
     }
 
-    public Boolean checkout(int id) {
+    Boolean checkout(int id) {
         if (!libraryDatabase.getListOfBooks()[id].getIsBorrowed()) {
-            libraryDatabase.getListOfBooks()[id].setBorrowed(true);
+            libraryDatabase.getListOfBooks()[id].setIsBorrowed(true);
             System.out.println("Thank you! Enjoy the book");
             return true;
         }

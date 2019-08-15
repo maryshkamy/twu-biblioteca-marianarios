@@ -6,7 +6,7 @@ public class Menu {
     private Scanner scanner;
     private Borrow borrow;
 
-    public Menu() {
+    Menu() {
         this.scanner = new Scanner(System.in);
         this.borrow = new Borrow();
     }
@@ -16,7 +16,7 @@ public class Menu {
         return "\nSelect one options:\n0 - Quit\n1 - List of Books";
     }
 
-    public void startMenu() {
+    void startMenu() {
         int input;
 
         while (true) {
@@ -29,15 +29,14 @@ public class Menu {
                 case 1:
                     int id;
 
-                    while (true) {
+                    do {
                         borrow.getListOfBooks();
                         System.out.println("\nWhich book do you want to borrow?");
                         id = Integer.parseInt(scanner.nextLine());
 
-                        if (borrow.checkout(id)) {
-                            break;
-                        }
-                    }
+                    } while (!borrow.checkout(id));
+
+                    break;
                 default:
                     System.out.println(invalidOption());
                     break;
